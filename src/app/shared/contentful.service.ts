@@ -4,23 +4,22 @@ import 'rxjs/add/operator/map';
 
 import { Observable } from 'rxjs/Rx';
 
+const URL: string = "http://cdn.contentful.com/spaces/";
+const ACCESS_TOKEN: string = "1f931ef6e32a213e871f08e9c7fab8398f0c4f6110f82fd29cc1a2b923404efa";
+const SPACE: string = "39s201f4ebm7";
+
 @Injectable()
 export class ContentfulService {
 
-  private serviceUrl: string = "http://cdn.contentful.com/spaces/" ;
-  private accessToken: string = "1f931ef6e32a213e871f08e9c7fab8398f0c4f6110f82fd29cc1a2b923404efa";
-  private space: string = "39s201f4ebm7";
+  private serviceUrl: string;
   private projects;
 
   constructor(private http: Http) {
-  	this.serviceUrl = 
-      this.serviceUrl +
-  		this.space + 
-  		"/entries/?access_token=" + this.accessToken;
+    this.serviceUrl = URL + SPACE + "/entries/?access_token=" + ACCESS_TOKEN;
   }
 
   getEntries( query:string ):Observable<any>{
-  	return this.http.get(this.serviceUrl + '&' + query)
+    return this.http.get(this.serviceUrl + '&' + query)
                     .catch(this.handleError);
   }
 
