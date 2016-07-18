@@ -1,0 +1,19 @@
+<p>
+  projects works!
+  <button class="get_projects" (click)="getProjects()">Get projects!</button>
+</p>
+<div *ngIf="projects && projects.length > 0">
+	<ul>
+		<li *ngFor="let project of projects">
+			<p>Id: {{ project.id }}</p>
+			<p>Client: {{ project.client }}</p>
+			<p>Project: {{ project.name }}</p>
+			<p><img [src]="project.image" [alt]="project.name" /></p>
+		</li>
+	</ul>
+	<p>Total Projects: {{ projects && projects.length }}</p>
+</div>
+<span></span>
+<span></span>
+<div *ngIf="projects && projects.length == 0">No projects to display!</div>
+
