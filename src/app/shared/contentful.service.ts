@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -12,7 +12,6 @@ const SPACE: string = "39s201f4ebm7";
 export class ContentfulService {
 
   private serviceUrl: string;
-  private projects;
 
   constructor(private http: Http) {
     this.serviceUrl = URL + SPACE + "/entries/?access_token=" + ACCESS_TOKEN;
