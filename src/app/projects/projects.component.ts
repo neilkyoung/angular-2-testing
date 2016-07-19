@@ -41,7 +41,7 @@ export class ProjectsComponent implements OnInit {
   //call the contentful service and return projects
   this.service.getEntries( projectsQuery )
   .map( data => data.json() || [] ) // get response from server
-  .map((projects: Array<Project>) => {
+  .map((projects: Array<Project>): Array<Project> => {
     //create empty array to hold projects
     let result:Array<Project> = [];
     //determine if projects are returned
@@ -66,7 +66,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   //handle grabbing links for includes in contentful response
-  private getLink(id, includes) {
+  private getLink(id: string, includes: Array<any>) {
   if ( id && includes ){
     for ( let link of includes ){
       if ( id === link.sys.id ){

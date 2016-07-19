@@ -17,7 +17,7 @@ import {
 
 import { provide } from '@angular/core';
 import { ProjectsComponent } from './projects.component';
-import { ContentfulService } from '../contentful.service';
+import { ContentfulService } from '../shared/contentful.service';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { APP_ROUTER_PROVIDERS } from '../../app/routes';
 import { ActivatedRoute, Router } from '@angular/router';
