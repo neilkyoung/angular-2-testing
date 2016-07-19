@@ -36,7 +36,4 @@ export class ProjectsService {
         return result;
       }); // get response from server
   }
-
-
-
 }
