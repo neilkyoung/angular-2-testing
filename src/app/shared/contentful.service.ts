@@ -22,6 +22,20 @@ export class ContentfulService {
                     .catch(this.handleError);
   }
 
+  //handle grabbing links for includes in contentful response
+  getLink(id: string, includes: Array<any>) {
+    if ( id && includes ){
+      for ( let link of includes ){
+        if ( id === link.sys.id ){
+          return link.fields;
+        }
+      }
+    }
+    else{
+      return false;
+    }
+  }
+
   private handleError (error: any) {
     // In a real world app, we might use a remote logging infrastructure
     // We'd also dig deeper into the error to get a better message

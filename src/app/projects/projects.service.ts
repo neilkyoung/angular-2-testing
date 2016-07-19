@@ -6,9 +6,10 @@ const PROJECTS_QUERY: string = "content_type=project&order=-sys.updatedAt&includ
 
 @Injectable()
 export class ProjectsService {
-
+  //contentful service to handle data from api
   constructor(private service:ContentfulService) {}
 
+  //get projects from contentful
   getProjects(){
     //call the contentful service and return projects
     return this.service.getEntries( PROJECTS_QUERY )
@@ -24,9 +25,9 @@ export class ProjectsService {
             let p = new Project();
             //assign the proprties
             p.id = project.sys.id;
-            p.client = this.getLink( project.fields.client.sys.id, projects["includes"].Entry ).clientName;
+            p.client = this.service.getLink( project.fields.client.sys.id, projects["includes"].Entry ).clientName;
             p.name = project.fields.projectName;
-            p.image = this.getLink( project.fields.projectHeroImage.sys.id, projects["includes"].Asset ).file.url;
+            p.image = this.service.getLink( project.fields.projectHeroImage.sys.id, projects["includes"].Asset ).file.url;
 
             //push to the projects array
             result.push( p );
@@ -36,18 +37,6 @@ export class ProjectsService {
       }); // get response from server
   }
 
-  //handle grabbing links for includes in contentful response
-  private getLink(id: string, includes: Array<any>) {
-    if ( id && includes ){
-      for ( let link of includes ){
-        if ( id === link.sys.id ){
-          return link.fields;
-        }
-      }
-    }
-    else{
-      return false;
-    }
-  }
+
 
 }
