@@ -15,5 +15,12 @@ bootstrap(AppComponent, [
     HTTP_PROVIDERS,
     ContentfulService
 ])
+.then(
+    // and play with the returned injector
+    appRef => playWithInjector(appRef.injector)
+)
 .catch(err => console.error(err));;
 
+function playWithInjector(inj) {
+    console.log(inj.get(ContentfulService));
+}

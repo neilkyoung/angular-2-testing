@@ -8,6 +8,9 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
       PolymerElement('paper-input'),
       PolymerElement('google-youtube')
     ],
+    styles: [
+      '.awesome-div{background-color:#F00}'
+    ],
     template: `
       <h2>Races</h2>
       <button (click)="refreshRaces()">Refresh the races list</button>
@@ -31,6 +34,8 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
       </google-youtube>
       <button (click)="player.pause()">Pause!</button>
       <button (click)="player.play()">Play!</button>
+
+      <div [class.awesome-div]="isAnAwesomeDiv()">I've got style</div>
 ` })
   export class RacesComponent {
     races: any = [];
@@ -39,5 +44,8 @@ import { PolymerElement } from '@vaadin/angular2-polymer';
     }
     onSpacePress(e){
       console.log( e );
+    }
+    isAnAwesomeDiv(){
+      return true;
     }
 }
