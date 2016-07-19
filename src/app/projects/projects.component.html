@@ -7,7 +7,7 @@
 		<li *ngFor="let project of projects">
 			<p>Id: {{ project.id }}</p>
 			<p>Client: {{ project.client }}</p>
-			<p>Project: {{ project.name }}</p>
+			<p>Project: <a [routerLink]=" ['/projects/' + project.slug] ">{{ project.name }}</a></p>
 			<p><img [src]="project.image" [alt]="project.name" /></p>
 		</li>
 	</ul>

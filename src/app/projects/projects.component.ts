@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProjectsService } from './projects.service';
+import { ProjectsService } from '../projects.service';
 //import { ContentfulLinkPipe } from '../shared/contentful-link.pipe';
-import { Project } from './project';
+import { Project } from '../project';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   moduleId: module.id,
   selector: 'app-projects',
   providers: [ProjectsService],
+  directives: [ROUTER_DIRECTIVES],
   //pipes: [ContentfulLinkPipe],
   templateUrl: 'projects.component.html',
   styleUrls: ['projects.component.css']

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ContentfulService } from '../shared/contentful.service';
+import { ContentfulService } from './shared/contentful.service';
 import { Project } from './project';
 
 const PROJECTS_QUERY: string = "content_type=project&order=-sys.updatedAt&include=1";
@@ -28,7 +28,7 @@ export class ProjectsService {
             p.client = this.service.getLink( project.fields.client.sys.id, projects["includes"].Entry ).clientName;
             p.name = project.fields.projectName;
             p.image = this.service.getLink( project.fields.projectHeroImage.sys.id, projects["includes"].Asset ).file.url;
-
+            p.slug = project.fields.projectSlug;
             //push to the projects array
             result.push( p );
           });
