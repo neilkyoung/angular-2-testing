@@ -7,8 +7,8 @@ describe('angular2-test App', function() {
     page = new Angular2TestPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying home works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('home works!');
   });
 });
