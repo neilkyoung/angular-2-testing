@@ -47,6 +47,7 @@ export class ProjectsComponent implements OnInit {
     this.service.getProjects().subscribe(data => this.projects = data);
   }
 
+  //project was selected from the project component
   projectSelected( e ){
     console.log( "Project was selected!" );
     console.log( e );

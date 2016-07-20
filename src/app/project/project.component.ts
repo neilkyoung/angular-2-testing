@@ -1,13 +1,10 @@
-import { Component, Input, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Project } from './project';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   moduleId: module.id,
   selector: 'project',
-  inputs: ['project'],
-  // we declare the custom event as an output
-  outputs: ['projectSelected'],
   directives: [ROUTER_DIRECTIVES],
   templateUrl: 'project.component.html',
   styleUrls: ['project.component.css']
@@ -17,7 +14,7 @@ export class ProjectComponent {
   @Input() project: Project;
 
   // the EventEmitter is used to emit the event
-  projectSelected: EventEmitter<Project> = new EventEmitter<Project>();
+  @Output() projectSelected: EventEmitter<Project> = new EventEmitter<Project>();
 
   constructor() {}
 
