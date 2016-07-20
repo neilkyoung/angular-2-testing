@@ -1,0 +1,7 @@
+<div>
+  <p>Id: {{ project.id }}</p>
+  <p>Client: {{ project.client }}</p>
+  <p>Project: <a class="project-link" (click)="selectProject()">{{ project.name }}</a></p>
+  <a class="project-link" [routerLink]=" ['/projects/' + project.slug] ">See Project Details</a>
+  <p><img [src]="project.image" [alt]="project.name" /></p>
+</div>

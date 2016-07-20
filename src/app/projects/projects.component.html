@@ -3,16 +3,10 @@
   <button class="get_projects" (click)="getProjects()">Get projects!</button>
 </p>
 <div *ngIf="projects && projects.length > 0">
-	<ul>
-		<li *ngFor="let project of projects">
-			<p>Id: {{ project.id }}</p>
-			<p>Client: {{ project.client }}</p>
-			<p>Project: <a [routerLink]=" ['/projects/' + project.slug] ">{{ project.name }}</a></p>
-			<p><img [src]="project.image" [alt]="project.name" /></p>
-		</li>
-	</ul>
+  <project *ngFor="let project of projects" [project]="project" (projectSelected)="projectSelected($event)"></project>
 	<p>Total Projects: {{ projects && projects.length }}</p>
 </div>
+<div loggable logText="Some text">Hello</div>
 <span></span>
 <span></span>
 <div *ngIf="projects && projects.length == 0">No projects to display!</div>

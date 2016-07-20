@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ContentfulService } from './shared/contentful.service';
-import { Project } from './project';
+import { Project } from './project/project';
 
 const PROJECTS_QUERY: string = "content_type=project&order=-sys.updatedAt&include=1";
 

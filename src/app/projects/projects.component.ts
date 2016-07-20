@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Directive, Input, EventEmitter, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectsService } from '../projects.service';
-import { Project } from '../project';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+import { Project } from '../project/project';
+import { ProjectComponent } from '../project/project.component';
 
 @Component({
   moduleId: module.id,
   selector: 'app-projects',
+  //inputs: ['project'],
+  //outputs: ['emitter: projectSelected'],
   providers: [ProjectsService],
-  directives: [ROUTER_DIRECTIVES],
+  directives: [ProjectComponent],
   templateUrl: 'projects.component.html',
   styleUrls: ['projects.component.css']
 })
@@ -16,9 +18,11 @@ export class ProjectsComponent implements OnInit {
   //private sub: any;
   private projects: Array<Project> = [];
   private errorMessage: string;
+  //project: Project;
+  //emitter: EventEmitter<Project> = new EventEmitter<Project>();
 
   // constructor for component
-  constructor(private route: ActivatedRoute, private service: ProjectsService) {}
+  constructor(private service: ProjectsService) {}
   //on initialise
   ngOnInit() {
     //determine if the snapshot parameter exists
@@ -42,6 +46,16 @@ export class ProjectsComponent implements OnInit {
     //subscribe to the projects call
     this.service.getProjects().subscribe(data => this.projects = data);
   }
+
+  projectSelected( e ){
+    console.log( "Project was selected!" );
+    console.log( e );
+  }
+
+  /*selectProject() {
+    console.log( this.project );
+    this.emitter.emit(this.project);
+  }*/
 
   /*ngOnDestroy(){
     this.sub.unsubscribe();
