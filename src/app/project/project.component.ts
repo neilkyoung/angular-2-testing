@@ -9,7 +9,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
   templateUrl: 'project.component.html',
   styleUrls: ['project.component.css']
 })
-export class ProjectComponent {
+export class ProjectComponent implements OnInit {
   //project that is assigned
   @Input() project: Project;
 
@@ -17,6 +17,10 @@ export class ProjectComponent {
   @Output() projectSelected: EventEmitter<Project> = new EventEmitter<Project>();
 
   constructor() {}
+
+  ngOnInit(){
+    console.log(`inputs are ${this.project}`);
+  }
 
   /**
    * Selects a project when the component is clicked.

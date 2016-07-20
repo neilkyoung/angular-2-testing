@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 
-import { By }           from '@angular/platform-browser';
+/*import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import {
@@ -22,4 +22,4 @@ describe('Component: Home', () => {
   it('should have as title \'home works!\'', () => {
     expect(home.title).toEqual('home works!');
   });
-});
+});*/

@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 
-import {
+/*import {
   beforeEach, beforeEachProviders,
   describe, xdescribe,
   expect, it, xit,
@@ -15,4 +15,4 @@ describe('App: Angular2Test', () => {
       inject([AppComponent], (app: AppComponent) => {
     expect(app).toBeTruthy();
   }));
-});
+});*/

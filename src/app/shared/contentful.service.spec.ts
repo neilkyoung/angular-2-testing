@@ -41,8 +41,8 @@ describe('Contentful Service', () => {
 
   //specs
   it('should return entries', done => {
-    service.getEntries( "content_type=project&order=-sys.updatedAt&include=1" ).map( data => data.json() || [] ).subscribe(x => { 
-      //test response 
+    service.getEntries( "content_type=project&order=-sys.updatedAt&include=1" ).map( data => data.json() || [] ).subscribe(x => {
+      //test response
       expect(x.items).toBeTruthy(); //has an items property
       expect(x.data).toBeUndefined(); //check that a data proprty does not exist
       expect(x.items.length).toEqual(2); //make sure length is 2

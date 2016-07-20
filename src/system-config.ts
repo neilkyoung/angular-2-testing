@@ -7,11 +7,15 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  '@vaadin': 'vendor/@vaadin'
+  'symbol-observable': 'vendor/symbol-observable',
+  '@vaadin': 'vendor/@vaadin',
 };
 
 /** User packages configuration. */
 const packages: any = {
+  'symbol-observable': {
+    main: 'index'
+  },
   '@vaadin/angular2-polymer': { main: 'index.js', defaultExtension: 'js' }
 };
 

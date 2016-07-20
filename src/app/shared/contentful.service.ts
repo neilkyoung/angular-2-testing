@@ -1,4 +1,4 @@
-import { Injectable, Inject, EventEmitter } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -15,19 +15,8 @@ export class ContentfulService {
 
   constructor(private http: Http) {
     this.serviceUrl = URL + SPACE + "/entries/?access_token=" + ACCESS_TOKEN;
-
-    let emitter = new EventEmitter();
-      emitter.subscribe(
-        value => console.log(value),
-        error => console.log(error),
-        () => console.log('done')
-    );
-      emitter.emit('hello');
-      emitter.emit('there');
-      emitter.complete();
-      // logs "hello", then "there", then "done"
   }
-
+  
   getEntries( query:string ):Observable<any>{
     return this.http.get(this.serviceUrl + '&' + query)
                     .catch(this.handleError);

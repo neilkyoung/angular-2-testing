@@ -7,8 +7,6 @@ import { ProjectComponent } from '../project/project.component';
 @Component({
   moduleId: module.id,
   selector: 'app-projects',
-  //inputs: ['project'],
-  //outputs: ['emitter: projectSelected'],
   providers: [ProjectsService],
   directives: [ProjectComponent],
   templateUrl: 'projects.component.html',
@@ -18,8 +16,6 @@ export class ProjectsComponent implements OnInit {
   //private sub: any;
   private projects: Array<Project> = [];
   private errorMessage: string;
-  //project: Project;
-  //emitter: EventEmitter<Project> = new EventEmitter<Project>();
 
   // constructor for component
   constructor(private service: ProjectsService) {}
