@@ -48,12 +48,13 @@ describe('Component: Projects', () => {
 
   //should create an instance of the service
   it('should call the getProjects() method on initialisation...', inject([ProjectsComponent], pc => {
-    spyOn(pc, 'getProjects'); //spy on the get projects function and call it
-    pc.ngOnInit(); //initialise the component
-    expect(pc.getProjects).toHaveBeenCalled(); //getProjects() should have been called
+    //spy on the get projects function
+    spyOn(pc, 'getProjects'); 
+    //initialise the component
+    pc.ngOnInit(); 
+    //getProjects() should have been called
+    expect(pc.getProjects).toHaveBeenCalled(); 
   }));
-
-  
 
 });
 
@@ -62,27 +63,6 @@ describe('Component: Projects', () => {
 /*describe('Component: Projects', () => {
   let projectComponent;
 
-  //setup
-  beforeEachProviders(() => [
-    ProjectsComponent
-  ]);
-
-  beforeEach(inject([ProjectsComponent], pc => {
-    projectComponent = pc;
-  }))
-
-
-
-  it('should create an instance', () => {
-    expect(projectComponent).toBeTruthy();
-    expect(projectComponent.projects.length).toEqual(0);
-  });
-
-  it('should call the getProjects() method on initialisation', () => {
-    spyOn(projectComponent, 'getProjects'); //spy on the get projects function and call it
-    projectComponent.ngOnInit(); //initialise the component
-    expect(projectComponent.getProjects).toHaveBeenCalled(); //getProjects() should have been called
-  });
 
   it('should call getProjects() when button is clicked', inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
 
