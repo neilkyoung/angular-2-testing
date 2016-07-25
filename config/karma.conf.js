@@ -24,8 +24,8 @@ module.exports = function (config) {
       { pattern: 'dist/vendor/systemjs/dist/system.src.js', included: true, watched: false },
       { pattern: 'dist/vendor/zone.js/dist/async-test.js', included: true, watched: false },
       { pattern: 'dist/vendor/zone.js/dist/fake-async-test.js', included: true, watched: false },
-      /*{ pattern: 'dist/bower_components/webcomponentsjs/webcomponents-lite.min.js', included: true, watched: false },
-      { pattern: 'dist/elements.html', included: true, watched: false },*/
+      { pattern: 'dist/bower_components/webcomponentsjs/webcomponents-lite.min.js', included: true, watched: false },
+      { pattern: 'dist/elements.html', included: true, watched: false },
       /*{ pattern: 'dist/bower_components/polymer/polymer.html', included: true, watched: false },
       { pattern: 'dist/bower_components/paper-styles/color.html', included: true, watched: false },
       { pattern: 'dist/bower_components/paper-styles/typography.html', included: true, watched: false },

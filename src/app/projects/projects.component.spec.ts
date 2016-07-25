@@ -54,8 +54,6 @@ describe('Component: Projects', () => {
     pc.ngOnInit(); 
     //getProjects() should have been called
     expect(pc.getProjects).toHaveBeenCalled(); 
-
-    expect(pc.projects.length).toEqual(0);
   }));
 
 });
