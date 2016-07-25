@@ -7,7 +7,7 @@ export class ProjectsService {
 
   //query for projects
   private projectsQuery: string = "content_type=project&order=-sys.updatedAt&include=1";
-
+  
   //contentful service to handle data from api
   constructor(private service:ContentfulService) {}
 

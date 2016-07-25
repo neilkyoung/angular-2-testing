@@ -7,35 +7,64 @@ import {
   beforeEach, beforeEachProviders,
   describe, xdescribe,
   expect, it, xit,
-  async, inject
+  async, inject, addProviders
 } from '@angular/core/testing';
 
-import {
+/*import {
 	ComponentFixture,
 	TestComponentBuilder
-} from '@angular/compiler/testing';
+} from '@angular/compiler/testing';*/
 
 import { provide } from '@angular/core';
 import { ProjectsComponent } from './projects.component';
-import { ContentfulService } from '../shared/contentful.service';
-import { HTTP_PROVIDERS } from '@angular/http';
-import { APP_ROUTER_PROVIDERS } from '../../app/routes';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ProjectsService } from '../projects.service';
+import { Project } from '../project/project';
 
-class MockRouter { createUrlTree() {} }
-class MockActivatedRoute { }
+let project1 = new Project();
+let project2 = new Project();
+
+// we create a mock contentful service as a dependancy
+class MockProjectsService{
+  getProjects(){
+    return [project1, project2]
+  }
+}
 
 describe('Component: Projects', () => {
+  let projectComponent, projectsService;
+
+  //add the providers
+  beforeEach(() => addProviders([
+    { provide: ProjectsService, useClass: MockProjectsService },
+    ProjectsComponent
+  ]));
+
+  //should create an instance of the service
+  it('should create the component...', inject([ProjectsComponent], pc => {
+    //expect the service to exist
+    expect(pc).toBeTruthy();
+    expect(pc.projects.length).toEqual(0);
+  }));
+
+  //should create an instance of the service
+  it('should call the getProjects() method on initialisation...', inject([ProjectsComponent], pc => {
+    spyOn(pc, 'getProjects'); //spy on the get projects function and call it
+    pc.ngOnInit(); //initialise the component
+    expect(pc.getProjects).toHaveBeenCalled(); //getProjects() should have been called
+  }));
+
+  
+
+});
+
+
+
+/*describe('Component: Projects', () => {
   let projectComponent;
 
   //setup
   beforeEachProviders(() => [
-    APP_ROUTER_PROVIDERS,
-    ProjectsComponent,
-    HTTP_PROVIDERS,
-    ContentfulService,
-    provide(Router, { useClass: MockRouter }),
-    provide(ActivatedRoute, { useClass: MockActivatedRoute })
+    ProjectsComponent
   ]);
 
   beforeEach(inject([ProjectsComponent], pc => {
@@ -44,7 +73,7 @@ describe('Component: Projects', () => {
 
 
 
-  /*it('should create an instance', () => {
+  it('should create an instance', () => {
     expect(projectComponent).toBeTruthy();
     expect(projectComponent.projects.length).toEqual(0);
   });
@@ -64,5 +93,5 @@ describe('Component: Projects', () => {
       fixture.detectChanges();
       expect(element.querySelectorAll('span').length).toBe(2);
     });
-  }));*/
-});
+  }));
+});*/

@@ -25,7 +25,7 @@ describe('Contentful Service', () => {
   }));
 
   //specs
-  it('should ...', done => {
+  it('should create the contentful service...', done => {
     //expect the service to exist
     expect(service).toBeTruthy();
     //make sure properties exist with correct values
@@ -39,8 +39,7 @@ describe('Contentful Service', () => {
     done();
   });
 
-  //specs
-  it('should return entries', done => {
+  it('should return entries', async(inject([ContentfulService], service => {
     service.getEntries( "content_type=project&order=-sys.updatedAt&include=1" ).map( data => data.json() || [] ).subscribe(x => {
       //test response
       expect(x.items).toBeTruthy(); //has an items property
@@ -48,8 +47,6 @@ describe('Contentful Service', () => {
       expect(x.items.length).toEqual(2); //make sure length is 2
       expect(x.items[0]).toBeTruthy(); //has a first element
       expect(x.items[0].sys.id).toBeTruthy(); //has an id
-      //finished
-      done();
     });
-  });
+  })));
 });
