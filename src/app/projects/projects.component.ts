@@ -14,7 +14,6 @@ import { ProjectComponent } from '../project/project.component';
 export class ProjectsComponent implements OnInit {
   //private sub: any;
   private projects: Array<Project> = [];
-  private errorMessage: string;
 
   // constructor for component
   constructor(private service: ProjectsService) {}
