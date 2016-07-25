@@ -8,6 +8,11 @@ var Angular2App = require('angular-cli/lib/broccoli/angular2-app');
 
 module.exports = function(defaults) {
   return new Angular2App(defaults, {
+    sassCompiler: {
+      includePaths: [
+        'src/style'
+      ]
+    },
     vendorNpmFiles: [
       'systemjs/dist/system-polyfills.js',
       'systemjs/dist/system.src.js',
@@ -16,8 +21,8 @@ module.exports = function(defaults) {
       'reflect-metadata/**/*.+(ts|js|js.map)',
       'rxjs/**/*.+(js|js.map)',
       '@angular/**/*.+(js|js.map)',
-      '@vaadin/**/*.+(js|js.map)',
-      'symbol-observable/*.js'
+      //'@vaadin/**/*.+(js|js.map)',
+      //'symbol-observable/*.js'
     ]
   });
 };

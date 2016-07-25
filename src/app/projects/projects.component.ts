@@ -1,5 +1,4 @@
-import { Directive, Input, EventEmitter, Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Directive, Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../projects.service';
 import { Project } from '../project/project';
 import { ProjectComponent } from '../project/project.component';

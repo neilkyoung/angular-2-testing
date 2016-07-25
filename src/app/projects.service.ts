@@ -2,17 +2,19 @@ import { Injectable } from '@angular/core';
 import { ContentfulService } from './shared/contentful.service';
 import { Project } from './project/project';
 
-const PROJECTS_QUERY: string = "content_type=project&order=-sys.updatedAt&include=1";
-
 @Injectable()
 export class ProjectsService {
+
+  //query for projects
+  private projectsQuery: string = "content_type=project&order=-sys.updatedAt&include=1";
+
   //contentful service to handle data from api
   constructor(private service:ContentfulService) {}
 
   //get projects from contentful
   getProjects(){
     //call the contentful service and return projects
-    return this.service.getEntries( PROJECTS_QUERY )
+    return this.service.getEntries( this.projectsQuery )
       .map( data => data.json() || [] )
       .map((projects: Array<Project>): Array<Project> => {
         //create empty array to hold projects

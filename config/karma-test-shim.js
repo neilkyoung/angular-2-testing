@@ -34,6 +34,33 @@ System.config({
   baseURL: distPath
 });
 
+/*var webcomponentsready = new Promise(function(resolve, reject) {
+  document.addEventListener('WebComponentsReady', resolve);
+});
+
+webcomponentsready.then(function() {
+  return System.import('system-config.js');
+}).then(function() {
+  // Load and configure the TestComponentBuilder.
+  return Promise.all([
+    System.import('@angular/core/testing'),
+    System.import('@angular/platform-browser-dynamic/testing')
+  ]).then(function (providers) {
+    var testing = providers[0];
+    var testingBrowser = providers[1];
+
+    testing.setBaseTestProviders(testingBrowser.TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,
+      testingBrowser.TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS);
+  });
+}).then(function() {
+  // Finally, load all spec files.
+  // This will run the tests directly.
+  return Promise.all(
+    allSpecFiles.map(function (moduleName) {
+      return System.import(moduleName);
+    }));
+}).then(__karma__.start, __karma__.error);*/
+
 System.import('system-config.js').then(function() {
   // Load and configure the TestComponentBuilder.
   return Promise.all([

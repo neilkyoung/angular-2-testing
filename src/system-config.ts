@@ -7,16 +7,16 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  'symbol-observable': 'vendor/symbol-observable',
-  '@vaadin': 'vendor/@vaadin',
+  /*'symbol-observable': 'vendor/symbol-observable',
+  '@vaadin': 'vendor/@vaadin',*/
 };
 
 /** User packages configuration. */
 const packages: any = {
-  'symbol-observable': {
+  /*'symbol-observable': {
     main: 'index'
   },
-  '@vaadin/angular2-polymer': { main: 'index.js', defaultExtension: 'js' }
+  '@vaadin/angular2-polymer': { main: 'index.js', defaultExtension: 'js' }*/
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -40,14 +40,13 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
-  'app/header/header',
   'app/header',
   'app/projects',
   'app/home',
   'app/footer',
   'app/races',
   'app/project-details',
-  'app/project',
+  'app/project'
   /** @cli-barrel */
 ];
 

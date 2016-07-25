@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 
-/*import { By }           from '@angular/platform-browser';
+import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import {
@@ -44,7 +44,7 @@ describe('Component: Projects', () => {
 
 
 
-  it('should create an instance', () => {
+  /*it('should create an instance', () => {
     expect(projectComponent).toBeTruthy();
     expect(projectComponent.projects.length).toEqual(0);
   });
@@ -64,5 +64,5 @@ describe('Component: Projects', () => {
       fixture.detectChanges();
       expect(element.querySelectorAll('span').length).toBe(2);
     });
-  }));
-});*/
+  }));*/
+});

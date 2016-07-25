@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 
-/*import { By }           from '@angular/platform-browser';
+import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import {
@@ -17,4 +17,4 @@ describe('Component: Footer', () => {
     let component = new FooterComponent();
     expect(component).toBeTruthy();
   });
-});*/
+});
