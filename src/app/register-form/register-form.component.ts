@@ -12,8 +12,18 @@ export class RegisterFormComponent implements OnInit {
 	public model = new RegisterForm( '', '', '' );
 	public powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
 
+	active = true;
+
+	submitted = false;
+
+	reset() {
+		this.model = new RegisterForm('', '', '');
+		this.active = false;
+		setTimeout(() => this.active = true, 0);
+	}
+
 	constructor() { 
-		
+
 	}
 
 	ngOnInit() {
@@ -22,6 +32,8 @@ export class RegisterFormComponent implements OnInit {
 
 	register() {
       console.log(this.model.username);
+      this.submitted = true;
+      //this.reset()
     }
 
     // TODO: Remove this when we're done
