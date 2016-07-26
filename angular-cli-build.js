@@ -38,7 +38,7 @@ module.exports = function(defaults) {
     let appTree = new Angular2App(defaults, {
         sassCompiler: {
             includePaths: [
-            'src/style'
+              'src/styles'
             ]
         },
         vendorNpmFiles: [
