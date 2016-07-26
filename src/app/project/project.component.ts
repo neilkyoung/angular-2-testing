@@ -19,7 +19,7 @@ export class ProjectComponent implements OnInit {
   constructor() {}
 
   ngOnInit(){
-    console.log(`inputs are ${this.project}`);
+    //console.log(`inputs are ${this.project}`);
   }
 
   /**
@@ -27,8 +27,8 @@ export class ProjectComponent implements OnInit {
    * Emits a custom event.
    */
   selectProject() {
-    console.log( "Project was clicked!" );
-    console.log( this.project );
+    //console.log( "Project was clicked!" );
+    //console.log( this.project );
     this.projectSelected.emit(this.project);
   }
 

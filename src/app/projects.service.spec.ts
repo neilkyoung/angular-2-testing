@@ -9,6 +9,7 @@ import {
 
 import { ContentfulService } from './shared/contentful.service';
 import { ProjectsService } from './projects.service';
+import { Http } from '@angular/http';
 
 // we create a mock contentful service as a dependancy
 class MockContentfulService{
