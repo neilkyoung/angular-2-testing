@@ -8,7 +8,14 @@ describe('angular2-test App', function() {
   });
 
   it('should display message saying home works', () => {
-    page.navigateTo();
+    browser.get('/');
     expect(page.getParagraphText()).toEqual('home works!');
+  });
+
+  it('should display message saying projects works', () => {
+    browser.get('/projects');
+    expect(page.getTextContent('.project-header')).toEqual('projects works!');
+
+    expect(page.getTextContent('.project-header')).not.toEqual('project works!');
   });
 });

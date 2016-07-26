@@ -5,12 +5,15 @@ import { HTTP_PROVIDERS } from '@angular/http';
 import { AppComponent, environment } from './app/';
 import { APP_ROUTER_PROVIDERS } from './app/routes';
 import { ContentfulService } from './app/shared/contentful.service';
+import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
 if (environment.production) {
   enableProdMode();
 }
 
 bootstrap(AppComponent, [
+    disableDeprecatedForms(),
+  	provideForms(),
     APP_ROUTER_PROVIDERS,
     HTTP_PROVIDERS,
     ContentfulService

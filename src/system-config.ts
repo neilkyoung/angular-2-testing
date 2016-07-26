@@ -9,6 +9,7 @@
 const map: any = {
   'symbol-observable': 'vendor/symbol-observable',
   '@vaadin': 'vendor/@vaadin',
+  'moment': 'vendor/moment/moment.js'
 };
 
 /** User packages configuration. */
@@ -46,7 +47,8 @@ const barrels: string[] = [
   'app/footer',
   'app/races',
   'app/project-details',
-  'app/project'
+  'app/project',
+  'app/register-form',
   /** @cli-barrel */
 ];
 

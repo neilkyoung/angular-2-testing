@@ -6,4 +6,8 @@ export class Angular2TestPage {
   getParagraphText() {
     return element(by.css('app-root h1')).getText();
   }
+
+  getTextContent(element){
+  	return $(element).getText();
+  }
 }
