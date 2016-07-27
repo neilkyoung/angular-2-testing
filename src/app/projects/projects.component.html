@@ -6,7 +6,7 @@
   <project *ngFor="let project of projects" [project]="project" (projectSelected)="projectSelected($event)"></project>
 	<p>Total Projects: {{ projects && projects.length }}</p>
 </div>
-<div loggable logText="Some text">Hello</div>
+<div class="log-text" loggable logText="Some text">Hello</div>
 <span></span>
 <span></span>
 <div class="no-projects" *ngIf="projects && projects.length == 0">No projects to display!</div>
