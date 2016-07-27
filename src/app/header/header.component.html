@@ -3,4 +3,8 @@
 	  header works!
 	  <a class="link" (click)="showAlert($event)">Show Alert</a>
 	</p>
+	<nav>
+		<a class="project-link" [routerLink]="['/projects']" routerLinkActive="selected-page">Projects</a>
+		<a class="races-link" [routerLink]="['/races']" routerLinkActive="selected-page">Races</a>
+	</nav>
 </header>
