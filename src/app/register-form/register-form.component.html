@@ -11,6 +11,12 @@
 		<div [hidden]="password.valid || password.pristine" class="alert alert-danger">
 	      Password is required
 	    </div>
+	    <label>Birth date</label><input [(ngModel)]="model.birthdate" ngControl="birthdate" type="date" required is-old-enough name="birthdate" #birthdate="ngModel">
+	    <div *ngIf="birthdate.control?.dirty">
+	      <div *ngIf="birthdate.control?.hasError('required')">Birth date is required</div>
+	      <div *ngIf="birthdate.control?.hasError('tooYoung')">You're way too young to be
+	  betting on pony races</div>
+	    </div>
 		<div class="form-group">
 		  <label for="power">Hero Power</label>
 		  <select class="form-control" required [(ngModel)]="model.power" name="power">

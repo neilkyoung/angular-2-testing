@@ -15,6 +15,7 @@ export class ProjectsService {
   getProjects(){
     //call the contentful service and return projects
     return this.service.getEntries( this.projectsQuery )
+      .retry(3)
       .map( data => data.json() || [] )
       .map((projects: Array<Project>): Array<Project> => {
         //create empty array to hold projects
