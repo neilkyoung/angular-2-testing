@@ -3,7 +3,9 @@
 </p>
 <button class="get-projects" (click)="getProjects()">Get projects!</button>
 <div *ngIf="projects && projects.length > 0">
-  <project *ngFor="let project of projects" [project]="project" (projectSelected)="projectSelected($event)"></project>
+  <div *ngFor="let project of projects">
+  	<project [project]="project" (projectSelected)="projectSelected($event)"></project>
+  </div>
 	<p>Total Projects: {{ projects && projects.length }}</p>
 </div>
 <div class="log-text" loggable logText="Some text">Hello</div>

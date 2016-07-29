@@ -5,9 +5,10 @@ import { ProjectsComponent } from "./projects/";
 import { ProjectDetailsComponent } from "./project-details/";
 import { RacesComponent } from "./races/";
 import { RegisterFormComponent } from "./register-form/";
+import { ProjectsResolverService } from './projects-resolver.service'
 
 export const routes:RouterConfig = [
-    { path: 'projects', component: ProjectsComponent },
+    { path: 'projects', component: ProjectsComponent, resolve: { projects: ProjectsResolverService } },
     { path: 'projects/:slug', component: ProjectDetailsComponent },
     { path: 'races', component: RacesComponent },
     { path: 'register', component: RegisterFormComponent },

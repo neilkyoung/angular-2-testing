@@ -2,6 +2,7 @@ import { Directive, Component, OnInit, QueryList, ViewChildren } from '@angular/
 import { ProjectsService } from '../projects.service';
 import { Project } from '../project/project';
 import { ProjectComponent } from '../project/project.component';
+import { ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -17,9 +18,10 @@ export class ProjectsComponent implements OnInit {
   @ViewChildren(ProjectComponent) children:QueryList<ProjectComponent>;
 
   // constructor for component
-  constructor(private service: ProjectsService) {}
+  constructor(private route: ActivatedRoute) {}
   //on initialise
   ngOnInit() {
+    this.projects = this.route.snapshot.data['projects'];
     //determine if the snapshot parameter exists
     /*if ( this.route.snapshot.params.hasOwnProperty("id") ){
       //snapshot, if you don't want to keep track of the parameter
@@ -27,7 +29,7 @@ export class ProjectsComponent implements OnInit {
     }
     else{*/
     //standard projects display
-    this.getProjects();
+    //this.getProjects();
     //}
     //observable, if we do!
     /*this.sub = this.route.params.subscribe(params => {
@@ -39,13 +41,13 @@ export class ProjectsComponent implements OnInit {
   ngAfterViewInit() {
     // children are set
     this.children.toArray().forEach((child)=>child.doSomething());
-     console.log( this.children.length );
+     console.log( this.children.toArray() );
   }
 
   //function to get a list of projects
   getProjects(){
     //subscribe to the projects call
-    this.service.getProjects().subscribe(data => this.projects = data);
+    //this.service.getProjects().subscribe(data => this.projects = data);
   }
 
   //project was selected from the project component
