@@ -22,6 +22,7 @@ export class ProjectsComponent implements OnInit {
   //on initialise
   ngOnInit() {
     this.projects = this.route.snapshot.data['projects'];
+    console.log( this.projects );
     //determine if the snapshot parameter exists
     /*if ( this.route.snapshot.params.hasOwnProperty("id") ){
       //snapshot, if you don't want to keep track of the parameter
