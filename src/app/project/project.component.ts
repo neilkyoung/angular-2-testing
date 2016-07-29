@@ -23,7 +23,9 @@ export class ProjectComponent implements OnInit {
   }
 
   doSomething(){
-    console.log("rendered");
+    console.log("Project Rendered");
+    console.log(this.project);
+
   }
 
   /**

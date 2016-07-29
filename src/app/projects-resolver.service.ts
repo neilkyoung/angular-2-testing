@@ -11,7 +11,7 @@ export class ProjectsResolverService {
 		private service: ProjectsService
 	) {}
 
-	resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
+	resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot):Array<any> {
 		return this.service.getProjects();
 	}
 
