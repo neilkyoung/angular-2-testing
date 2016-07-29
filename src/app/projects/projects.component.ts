@@ -1,4 +1,4 @@
-import { Directive, Component, OnInit } from '@angular/core';
+import { Directive, Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ProjectsService } from '../projects.service';
 import { Project } from '../project/project';
 import { ProjectComponent } from '../project/project.component';
@@ -14,6 +14,7 @@ import { ProjectComponent } from '../project/project.component';
 export class ProjectsComponent implements OnInit {
   //private sub: any;
   private projects: Array<Project> = [];
+  @ViewChildren(ProjectComponent) children:QueryList<ProjectComponent>;
 
   // constructor for component
   constructor(private service: ProjectsService) {}
@@ -33,6 +34,12 @@ export class ProjectsComponent implements OnInit {
       let id = Number.parseInt(params['id']);
       console.log( id );
     });*/
+  }
+
+  ngAfterViewInit() {
+    // children are set
+    this.children.toArray().forEach((child)=>child.doSomething());
+     console.log( this.children.length );
   }
 
   //function to get a list of projects

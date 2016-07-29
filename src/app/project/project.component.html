@@ -2,6 +2,6 @@
   <p>Id: {{ project.id }}</p>
   <p>Client: {{ project.client }}</p>
   <p>Project: <a class="project-event-link" (click)="selectProject()">{{ project.name }}</a></p>
-  <a class="project-link" [routerLink]="['/projects' + project.slug]" href="/projects/{{ project.slug }}">See Project Details</a>
+  <a class="project-link" [routerLink]="['/projects/' + project.slug]" href="/projects/{{ project.slug }}">See Project Details</a>
   <p><img class="project-image" [src]="project.image" [alt]="project.name" /></p>
 </div>

@@ -22,6 +22,10 @@ export class ProjectComponent implements OnInit {
     //console.log(`inputs are ${this.project}`);
   }
 
+  doSomething(){
+    console.log("rendered");
+  }
+
   /**
    * Selects a project when the component is clicked.
    * Emits a custom event.
