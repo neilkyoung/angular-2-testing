@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ContentfulService } from './shared/contentful.service';
-import { Project } from './project/project';
+import { ContentfulService } from '../shared/contentful.service';
+import { Project } from '../project/project';
 
 @Injectable()
 export class ProjectsService {

@@ -6,8 +6,8 @@ import { AppComponent, environment } from './app/';
 import { APP_ROUTER_PROVIDERS } from './app/routes';
 import { ContentfulService } from './app/shared/contentful.service';
 import { disableDeprecatedForms, provideForms } from '@angular/forms';
-import { ProjectsResolverService } from './app/projects-resolver.service';
-import { ProjectsService } from "./app/projects.service";
+import { ProjectsResolver } from './app/resolvers/projects.resolver';
+import { ProjectsService } from "./app/projects/projects.service";
 
 if (environment.production) {
   enableProdMode();
@@ -19,7 +19,7 @@ bootstrap(AppComponent, [
     APP_ROUTER_PROVIDERS,
     HTTP_PROVIDERS,
     ContentfulService,
-    ProjectsResolverService,
+    ProjectsResolver,
     ProjectsService
 ])
 .then(

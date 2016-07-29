@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { ProjectsService } from './projects.service';
+import { ProjectsService } from '../projects/projects.service';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
-import { Project } from './project/project';
+import { Project } from '../project/project';
 
 @Injectable()
-export class ProjectsResolverService implements Resolve<any> {
+export class ProjectsResolver implements Resolve<any> {
 
 	constructor(
 		private service: ProjectsService

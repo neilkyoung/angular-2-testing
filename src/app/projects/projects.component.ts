@@ -1,5 +1,5 @@
 import { Directive, Component, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { ProjectsService } from '../projects.service';
+import { ProjectsService } from './projects.service';
 import { Project } from '../project/project';
 import { ProjectComponent } from '../project/project.component';
 import { ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';

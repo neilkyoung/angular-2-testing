@@ -7,7 +7,7 @@ import {
   async, inject, addProviders
 } from '@angular/core/testing';
 
-import { ContentfulService } from './shared/contentful.service';
+import { ContentfulService } from '../shared/contentful.service';
 import { ProjectsService } from './projects.service';
 import { Http } from '@angular/http';
 

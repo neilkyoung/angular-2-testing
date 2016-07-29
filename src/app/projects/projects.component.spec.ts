@@ -19,7 +19,7 @@ import { LocationStrategy } from '@angular/common';
 
 import { ContentfulService } from '../shared/contentful.service';
 import { ProjectsComponent } from './projects.component';
-import { ProjectsService } from '../projects.service';
+import { ProjectsService } from './projects.service';
 import { Project } from '../project/project';
 import { ProjectComponent } from '../project/project.component';
 
