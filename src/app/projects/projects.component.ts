@@ -18,10 +18,10 @@ export class ProjectsComponent implements OnInit {
   @ViewChildren(ProjectComponent) children:QueryList<ProjectComponent>;
 
   // constructor for component
-  constructor(private route: ActivatedRoute) {}
+  constructor(private service: ProjectsService, private route: ActivatedRoute) {}
   //on initialise
   ngOnInit() {
-    this.projects = this.route.snapshot.data['projects'];
+    this.projects = ( this.route.snapshot.data['projects'] || []);
     console.log( this.projects );
     //determine if the snapshot parameter exists
     /*if ( this.route.snapshot.params.hasOwnProperty("id") ){
@@ -48,7 +48,7 @@ export class ProjectsComponent implements OnInit {
   //function to get a list of projects
   getProjects(){
     //subscribe to the projects call
-    //this.service.getProjects().subscribe(data => this.projects = data);
+    this.service.getProjects().subscribe(data => this.projects = data);
   }
 
   //project was selected from the project component
